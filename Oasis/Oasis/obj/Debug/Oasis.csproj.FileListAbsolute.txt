@@ -1,0 +1,17 @@
+C:\oisis\Oasis\Oasis\bin\Debug\Oasis.exe.config
+C:\oisis\Oasis\Oasis\bin\Debug\Oasis.exe
+C:\oisis\Oasis\Oasis\bin\Debug\Oasis.pdb
+C:\oisis\Oasis\Oasis\obj\Debug\Oasis.csproj.AssemblyReference.cache
+C:\oisis\Oasis\Oasis\obj\Debug\MainWindow.g.cs
+C:\oisis\Oasis\Oasis\obj\Debug\App.g.cs
+C:\oisis\Oasis\Oasis\obj\Debug\Oasis_MarkupCompile.cache
+C:\oisis\Oasis\Oasis\obj\Debug\Oasis_MarkupCompile.lref
+C:\oisis\Oasis\Oasis\obj\Debug\MainWindow.baml
+C:\oisis\Oasis\Oasis\obj\Debug\Oasis.g.resources
+C:\oisis\Oasis\Oasis\obj\Debug\Oasis.Properties.Resources.resources
+C:\oisis\Oasis\Oasis\obj\Debug\Oasis.csproj.GenerateResource.cache
+C:\oisis\Oasis\Oasis\obj\Debug\Oasis.csproj.CoreCompileInputs.cache
+C:\oisis\Oasis\Oasis\obj\Debug\Oasis.exe
+C:\oisis\Oasis\Oasis\obj\Debug\Oasis.pdb
+C:\oisis\Oasis\Oasis\obj\Debug\Chatwindow.g.cs
+C:\oisis\Oasis\Oasis\obj\Debug\Chatwindow.baml

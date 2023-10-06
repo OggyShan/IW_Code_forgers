@@ -1,0 +1,1 @@
+launch=["start","open","launch","run","initiate","boot"]
