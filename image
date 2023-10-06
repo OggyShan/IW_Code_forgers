@@ -1,0 +1,54 @@
+import base64
+import requests
+import os
+created=0
+def imagine(idea):
+    global created
+    url = "https://api.stability.ai/v1/generation/stable-diffusion-xl-1024-v1-0/text-to-image"
+
+    body = {
+    "steps": 40,
+    "width": 1024,
+    "height": 1024,
+    "seed": 0,
+    "cfg_scale": 5,
+    "samples": 1,
+    "text_prompts": [
+        {
+        "text": idea,
+        "weight": 1
+        },
+        {
+        "text": "blurry, bad, no realistic",
+        "weight": -1
+        }
+    ],
+    }
+
+    headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+    "Authorization": "sk-F8qibFPGr29ndSslyszgxU27ymSNpwPco9BByn3JCJt5pEQZ",
+    }
+
+    response = requests.post(
+    url,
+    headers=headers,
+    json=body,
+    )
+
+    if response.status_code != 200:
+       return  Exception(str(response.json()["message"]))
+
+    data = response.json()
+    
+    # make sure the out directory exists
+    if not os.path.exists("./out"):
+        os.makedirs("./out")
+
+    for i, image in enumerate(data["artifacts"]):
+        with open(f'./out/'+str(created)+'.png', "wb") as f:
+            f.write(base64.b64decode(image["base64"]))
+            created+=1
+    return "Image created Successfully"
+
