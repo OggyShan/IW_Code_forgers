@@ -1,0 +1,12 @@
+to install
+time
+screen_brightness_control
+speech_recognition
+keyboard
+ctypes
+pywhatkit
+re
+os
+pyttsx3
+
+
