@@ -9,5 +9,8 @@ re
 os
 pyttsx3
 datetime
+base64
+requests
+
 
 
