@@ -1,0 +1,103 @@
+﻿<Window x:Class="Oasis.ChatWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Oasis"
+        mc:Ignorable="d"
+        Title="Oasis" >
+<Grid>
+        <Grid Margin="0,0,0,0">
+            <DockPanel LastChildFill="True">
+                <Border DockPanel.Dock="Bottom" Margin="0 0 0 0 " Background="#35B3B3B3" BorderBrush="#59FF0000" BorderThickness="2" CornerRadius="20,20,20,20" >
+                    <Grid>
+                        <TextBox x:Name="bottom_query" Padding="10" Background="#003E3E3E" Foreground="Black" BorderBrush="#FF4A4A4A" 
+                         FontFamily="Baskerville old face" FontSize="20" BorderThickness="0" Margin="0 0 65 0"  KeyDown="EnterKey">
+                        </TextBox>
+                    </Grid>
+                </Border>
+                <ScrollViewer x:Name="ChatScrollViewer" VerticalScrollBarVisibility="Hidden">
+                    <ItemsControl ItemsSource="{Binding Messages}" x:Name="ItemsControl">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+
+                                <Grid Width="auto"  Margin="15 2 20 10" >
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    <Border CornerRadius="8"   Grid.Column="{Binding Column}" BorderBrush="LightGray" BorderThickness="0" 
+                                    Padding="10" HorizontalAlignment="Left" >
+                                        <Border.Style>
+                                            <Style TargetType="Border">
+                                                <Setter Property="Background" Value="#F0F0F0"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Column}" Value="1">
+                                                        <Setter Property="Background" Value="LightBlue"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Border.Effect>
+
+                                            <DropShadowEffect BlurRadius="5" Color="Black" Opacity=".3"  ShadowDepth="1" />
+                                        </Border.Effect>
+
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBox Text="{Binding Text}" Grid.Column="{Binding Column}" MaxWidth="300" TextWrapping="Wrap" Foreground="Black" FontFamily="times new roman" 
+            FontSize="18" IsReadOnly="True" BorderBrush="Transparent" BorderThickness="0">
+                                                <TextBox.Style>
+                                                    <Style TargetType="{x:Type TextBox}">
+                                                        <Setter Property="Background" Value="#F0F0F0"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Column}" Value="1">
+                                                                <Setter Property="Background" Value="LightBlue"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBox.Style>
+                                            </TextBox>
+                                
+                                            
+                                                <Image x:Name="imagined_image"  Width="150" >
+                                                    <Image.Style>
+                                                        <Style TargetType="Image">
+                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding Column}" Value="0">
+                                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Image.Style>
+                                                </Image>
+                                            
+
+
+
+
+                                        </StackPanel>
+
+
+                                    </Border>
+                                    
+                                    
+
+                                </Grid>
+
+
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                   
+                </ScrollViewer>
+
+            </DockPanel>
+
+        
+        </Grid>
+    </Grid>
+</Window>
